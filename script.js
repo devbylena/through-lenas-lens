@@ -95,7 +95,7 @@ if (contactForm) {
 
         try {
             const response = await fetch(
-                "http://localhost:3000/api/contact",
+                "https://through-lenas-lens.onrender.com/api/contact",
                 {
                     method: "POST",
                     headers: {
