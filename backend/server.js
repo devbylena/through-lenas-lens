@@ -15,7 +15,10 @@ app.use(express.json({ limit: "10kb" }));
 
 app.use(
     cors({
-        origin: "http://127.0.0.1:5500",
+     origin: [
+            "http://127.0.0.1:5500",
+            "https://devbylena.github.io",
+        ],
         methods: ["GET", "POST"],
     })
 );
