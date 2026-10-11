@@ -612,3 +612,10 @@ nav a[aria-current="page"] {
         min-height: 32vh;
     }
 }
+
+
+.photo-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}

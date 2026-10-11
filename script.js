@@ -37,38 +37,62 @@ document.addEventListener("DOMContentLoaded", () => {
 
     photos.forEach((photo) => observer.observe(photo));
 
+ 
     // 3. Portfolio nach Kategorien filtern
     const filterButtons = document.querySelectorAll(".filter-button");
     const galleryPhotos = document.querySelectorAll(
         ".portfolio-gallery .photo"
     );
 
-    filterButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-            const filter = button.dataset.filter;
+    function applyFilter(filter) {
+        // Filter-Buttons aktualisieren
+        filterButtons.forEach((button) => {
+            const isActive = button.dataset.filter === filter;
 
-            filterButtons.forEach((item) => {
-                item.classList.remove("active");
-                item.setAttribute("aria-pressed", "false");
-            });
-
-            button.classList.add("active");
-            button.setAttribute("aria-pressed", "true");
-
-            galleryPhotos.forEach((photo) => {
-                const matches =
-                    filter === "all" ||
-                    photo.dataset.category === filter;
-
-                photo.hidden = !matches;
-            });
+            button.classList.toggle("active", isActive);
+            button.setAttribute("aria-pressed", String(isActive));
         });
 
-        button.setAttribute(
-            "aria-pressed",
-            button.classList.contains("active") ? "true" : "false"
-        );
+        // Fotos nach Kategorie ein- oder ausblenden
+        galleryPhotos.forEach((photo) => {
+            const matches =
+                filter === "all" ||
+                photo.dataset.category === filter;
+
+            photo.hidden = !matches;
+        });
+    }
+
+    // Klicks auf die Filter-Buttons
+    filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            applyFilter(button.dataset.filter);
+        });
     });
+
+    // Kategorie aus der URL lesen, z. B. ?category=autos
+    const params = new URLSearchParams(window.location.search);
+    const requestedCategory = params.get("category");
+
+    // Kategorien von der Startseite den Portfolio-Kategorien zuordnen
+    const categoryMap = {
+        landschaften: "landscape",
+        tiere: "tiere",
+        naturdetails: "nature",
+        autos: "car"
+    };
+
+    // Gewünschten Filter aktivieren
+    if (galleryPhotos.length > 0) {
+        const filter = categoryMap[requestedCategory] || "all";
+
+        const validFilter = Array.from(filterButtons).some(
+            (button) => button.dataset.filter === filter
+        );
+
+        applyFilter(validFilter ? filter : "all");
+    }
+
 
 
 // 4. Kontaktformular: Nachricht direkt versenden
