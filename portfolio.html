@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entdecke die Natur-, Wildlife- und Makrofotografie von Through Lena's Lens.">
+    <title>Portfolio | Through Lena's Lens</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <a class="logo" href="index.html">through lena's lens.</a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="aboutme.html">About Me</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <p>Momente, die bleiben</p>
+            <h1>My Portfolio</h1>
+            <p>Die Welt durch meine Linse – von kleinen Details bis zu wilden Begegnungen.</p>
+        </section>
+
+        <section id="portfolio">
+            <div class="section-heading">
+                <p>Meine Arbeiten</p>
+                <h2>Entdecke die Galerie</h2>
+            </div>
+
+            <div class="filter-bar" aria-label="Galerie filtern">
+                <button class="filter-button active" data-filter="all">Alle</button>
+                <button class="filter-button" data-filter="tiere">Tiere</button>
+                <button class="filter-button" data-filter="landscape">Landschaften</button>
+                <button class="filter-button" data-filter="nature">Naturdetails</button>
+                <button class="filter-button" data-filter="car">Autos</button>
+            </div>
+
+            <div class="gallery portfolio-gallery">
+                <article class="photo" data-category="landscape">
+                    <img src="images/landscape.jpg" alt="Saxerlücke" loading="lazy">
+                    <h3>Saxerlücke</h3>
+                    <p class="photo-category">Landschaften</p>
+                </article>
+
+                <article class="photo" data-category="tiere">
+                    <img src="images/cat.png" alt="Katze" loading="lazy">
+                    <h3>Mogli, der Kater</h3>
+                    <p class="photo-category">Tiere</p>
+                </article>
+
+                <article class="photo" data-category="nature">
+                    <img src="images/nature.png" alt="Biene auf Blume" loading="lazy">
+                    <h3>Biene auf Blume</h3>
+                    <p class="photo-category">Naturdetails</p>
+                </article>
+
+                <article class="photo" data-category="tiere">
+                    <img src="images/cat01.png" alt="Katze" loading="lazy">
+                    <h3>Nala, die Katze</h3>
+                    <p class="photo-category">Tiere</p>
+                </article>
+
+                <article class="photo" data-category="landscape">
+                    <img src="images/landscape01.jpg" alt="Saxerlücke" loading="lazy">
+                    <h3>Saxerlücke</h3>
+                    <p class="photo-category">Landschaften</p>
+                </article>
+
+                <article class="photo" data-category="nature">
+                    <img src="images/nature01.jpg" alt="Hagebutten" loading="lazy">
+                    <h3>Hagebutten</h3>
+                    <p class="photo-category">Naturdetails</p>
+                </article>
+
+                <article class="photo" data-category="landscape">
+                    <img src="images/landscape02.jpg" alt="Küste Mallorca" loading="lazy">
+                    <h3>Küste Mallorca</h3>
+                    <p class="photo-category">Landschaften</p>
+                </article>
+
+                <article class="photo" data-category="nature">
+                    <img src="images/nature02.jpg" alt="Glockenblume" loading="lazy">
+                    <h3>Glockenblume</h3>
+                    <p class="photo-category">Naturdetails</p>
+                </article>
+
+                <article class="photo" data-category="car">
+                    <img src="images/car.jpg" alt="VW Scirocco" loading="lazy">
+                    <h3>VW Scirocco</h3>
+                    <p class="photo-category">Autos</p>
+                </article>
+            </div>
+
+            <p class="gallery-note">
+                Die Bilder sind Platzhalter. Hier kannst du später deine eigenen Fotografien einsetzen.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        © <span class="current-year">2026</span> Through Lena's Lens · Mit Leidenschaft fotografiert
+    </footer>
+</body>
+</html>

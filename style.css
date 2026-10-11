@@ -1,0 +1,614 @@
+
+/* =========================
+   GRUNDEINSTELLUNGEN
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #171a16;
+    color: #f2eee5;
+    font-family: Georgia, serif;
+}
+
+/* =========================
+   HEADER & NAVIGATION
+========================= */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 8%;
+    border-bottom: 1px solid #383c33;
+}
+
+.logo {
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: #d4d6ca;
+    text-decoration: none;
+    margin-left: 25px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #c5a878;
+}
+
+/* =========================
+   HERO-BEREICH
+========================= */
+
+.hero {
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 20px;
+
+    background:
+        linear-gradient(#171a1680, #171a16d9),
+        url("https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1800&q=85")
+        center / cover;
+}
+
+.hero p {
+    color: #d1bd98;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 84px);
+    font-weight: normal;
+    max-width: 850px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero .description {
+    color: #e0ded5;
+    font-size: 17px;
+    letter-spacing: 0;
+    text-transform: none;
+    line-height: 1.7;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 14px 28px;
+    border: 1px solid #c5a878;
+    color: #f2eee5;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #c5a878;
+    color: #171a16;
+}
+
+/* =========================
+   ALLGEMEINE ABSCHNITTE
+========================= */
+
+section {
+    padding: 75px 8%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-heading p {
+    color: #c5a878;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.section-heading h2 {
+    font-size: 38px;
+    font-weight: normal;
+}
+
+/* =========================
+   FOTOGALERIE
+========================= */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.photo {
+    overflow: hidden;
+    background: #292e27;
+}
+
+.photo img {
+    width: 100%;
+    height: 330px;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.photo:hover img {
+    transform: scale(1.05);
+}
+
+.photo h3 {
+    padding: 18px 15px;
+    font-weight: normal;
+    font-size: 19px;
+}
+
+/* =========================
+   ÜBER MICH
+========================= */
+
+#about {
+    background: #20251e;
+    text-align: center;
+}
+
+.about-text {
+    max-width: 650px;
+    margin: auto;
+    color: #d0d0c6;
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+/* =========================
+   KONTAKT
+========================= */
+
+#contact {
+    text-align: center;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    border-top: 1px solid #383c33;
+    text-align: center;
+    padding: 25px;
+    color: #a9ad9f;
+    font: 12px Arial, sans-serif;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 750px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav a {
+        margin: 0 8px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .photo img {
+        height: 280px;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+}
+
+
+/* =========================
+   LIGHTBOX / GROSSE FOTOANSICHT
+========================= */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(10, 12, 10, 0.95);
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    display: block;
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.4);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: transparent;
+    border: none;
+    color: #f2eee5;
+    font-size: 42px;
+    cursor: pointer;
+}
+
+.lightbox-close:hover {
+    color: #c5a878;
+}
+
+
+/* Theme-Schalter */
+#theme-toggle {
+    padding: 10px 15px;
+    background: transparent;
+    color: #f2eee5;
+    border: 1px solid #c5a878;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+body.light-mode {
+    background: #f5f1e8;
+    color: #292e27;
+}
+
+body.light-mode header,
+body.light-mode footer {
+    border-color: #d5cdbd;
+}
+
+body.light-mode nav a {
+    color: #292e27;
+}
+
+body.light-mode #about {
+    background: #e9e3d7;
+}
+
+body.light-mode .about-text {
+    color: #494b43;
+}
+
+body.light-mode #theme-toggle {
+    color: #292e27;
+}
+
+
+/* =========================
+   SEITENÜBERGREIFENDE ELEMENTE
+========================= */
+
+header .logo {
+    color: #f2eee5;
+    text-decoration: none;
+}
+
+nav a[aria-current="page"] {
+    color: #c5a878;
+}
+
+/* =========================
+   SEITEN-TITEL
+========================= */
+
+.page-hero {
+    min-height: 38vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 70px 8%;
+    background:
+        linear-gradient(#171a16b8, #171a16e8),
+        url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1800&q=85")
+        center / cover;
+}
+
+.page-hero p:first-child,
+.eyebrow {
+    color: #c5a878;
+    font: 11px Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.page-hero h1 {
+    font-size: clamp(42px, 6vw, 72px);
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.page-hero p:last-child {
+    max-width: 650px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #e0ded5;
+}
+
+/* =========================
+   PORTFOLIO-FILTER
+========================= */
+
+.filter-bar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.filter-button {
+    padding: 11px 20px;
+    border: 1px solid #51564a;
+    background: transparent;
+    color: #e0ded5;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.filter-button:hover,
+.filter-button.active {
+    background: #c5a878;
+    color: #171a16;
+    border-color: #c5a878;
+}
+
+.portfolio-gallery .photo {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.portfolio-gallery .photo[hidden] {
+    display: none;
+}
+
+.photo-category {
+    padding: 0 15px 18px;
+    color: #b6b9aa;
+    font: 12px Arial, sans-serif;
+}
+
+.gallery-note {
+    margin-top: 30px;
+    text-align: center;
+    color: #a9ad9f;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* =========================
+   ABOUT ME
+========================= */
+
+.about-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.about-image img {
+    width: 100%;
+    min-height: 450px;
+    max-height: 600px;
+    object-fit: cover;
+    display: block;
+}
+
+.about-content h2,
+.contact-info h2 {
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.2;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.about-content > p:not(.eyebrow),
+.contact-info > p:not(.eyebrow) {
+    color: #c8c9be;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.about-details {
+    background: #20251e;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.detail-card {
+    padding: 30px;
+    border: 1px solid #41463a;
+}
+
+.detail-card span {
+    color: #c5a878;
+    font-size: 13px;
+}
+
+.detail-card h3 {
+    font-size: 23px;
+    font-weight: normal;
+    margin: 20px 0 12px;
+}
+
+.detail-card p {
+    color: #c8c9be;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 70px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.contact-item span {
+    color: #c5a878;
+    font: 11px Arial, sans-serif;
+    letter-spacing: 2px;
+}
+
+.contact-item a {
+    color: #f2eee5;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.contact-item a:hover {
+    color: #c5a878;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-form label {
+    margin-top: 8px;
+    font: 13px Arial, sans-serif;
+    color: #e0ded5;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    background: #20251e;
+    color: #f2eee5;
+    border: 1px solid #41463a;
+    font: 14px Arial, sans-serif;
+    border-radius: 0;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 1px solid #c5a878;
+    border-color: #c5a878;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form .button {
+    align-self: flex-start;
+    background: transparent;
+    cursor: pointer;
+}
+
+.contact-form .button:hover {
+    background: #c5a878;
+}
+
+.form-note {
+    color: #a9ad9f;
+    font: 12px/1.7 Arial, sans-serif;
+    margin-top: 5px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    header nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+    }
+
+    header nav a {
+        margin: 0;
+    }
+
+    .about-layout,
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-image img {
+        min-height: 280px;
+        max-height: 400px;
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-hero {
+        min-height: 32vh;
+    }
+}

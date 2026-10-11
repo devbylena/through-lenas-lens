@@ -1,0 +1,11 @@
+# Geheimnisse und Umgebungsvariablen
+.env
+.env.*
+
+# Node.js
+node_modules/
+
+# Backend-Geheimnisse und Abhängigkeiten
+backend/.env
+backend/.env.*
+backend/node_modules/

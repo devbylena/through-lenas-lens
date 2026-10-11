@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kontaktiere Through Lena's Lens für Fragen und Fotografie-Anfragen.">
+    <title>Contact | Through Lena's Lens</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <a class="logo" href="index.html">through lena's lens.</a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="aboutme.html">About Me</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero contact-hero">
+            <p>Let's connect</p>
+            <h1>Get in touch</h1>
+            <p>Fragen, Feedback oder einfach Lust, über Fotografie zu sprechen? Ich freue mich auf deine Nachricht.</p>
+        </section>
+
+        <section class="contact-layout">
+            <div class="contact-info">
+                <p class="eyebrow">Kontakt</p>
+                <h2>Let's talk photography.</h2>
+
+                <p>
+                    Du möchtest etwas über meine Arbeit erfahren oder
+                    hast eine Frage zu einem Foto? Schreib mir gerne.
+                </p>
+
+                <div class="contact-item">
+                    <span>E-MAIL</span>
+                    <a href="mailto:lena-gysel@hispeed.ch">
+                        lena-gysel@hispeed.ch
+                    </a>
+                </div>
+
+                <div class="contact-item">
+                    <span>INSTAGRAM</span>
+                    <a href="https://www.instagram.com/_through_lenas_lens_/"
+                       target="_blank" rel="noopener noreferrer">
+                        @_through_lenas_lens_
+                    </a>
+                </div>
+            </div>
+
+<form id="contact-form" class="contact-form">
+    <label for="name">Dein Name</label>
+    <input type="text" id="name" name="name"
+           placeholder="Wie heisst du?" required maxlength="100">
+
+    <label for="email">Deine E-Mail-Adresse</label>
+    <input type="email" id="email" name="email"
+           placeholder="name@beispiel.ch" required maxlength="254">
+
+    <label for="subject">Betreff</label>
+    <input type="text" id="subject" name="subject"
+           placeholder="Worum geht es?" required maxlength="150">
+
+    <label for="message">Deine Nachricht</label>
+    <textarea id="message" name="message" rows="6"
+              placeholder="Schreib mir etwas ..."
+              required maxlength="5000"></textarea>
+
+    <button class="button" type="submit">Nachricht senden ↗</button>
+
+    <p class="form-note" id="form-status" role="status" aria-live="polite"></p>
+</form>
+        </section>
+    </main>
+
+    <footer>
+        © <span class="current-year">2026</span> Through Lena's Lens · Mit Leidenschaft fotografiert
+    </footer>
+</body>
+</html>
